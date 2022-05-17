@@ -1,0 +1,393 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* border box fix */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	/* Background pattern from Subtle Patterns */
+	
+
+	font-family: sans-serif;
+	font-size: 60%;
+	letter-spacing: 1.5px;
+	margin: 0;
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 0.5em auto;
+}
+
+ul > li {
+	list-style: none;
+}
+
+.card,
+.reset-btn {
+	cursor: pointer;
+
+}
+
+.btn {
+	border-radius: 1em;
+	border: none;
+	color: rgb(71, 67, 67);
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+	padding: 0.8em;
+  
+}
+
+.card:hover{
+  background-image: linear-gradient(to right, #848383 0%, #aca9ac  51%, #b0a5a2  100%);
+  background-position: right center; /* change the direction of the change here */
+  color: rgb(84, 79, 79);
+  text-decoration: none;
+}
+
+        
+.btn {
+  background-image: linear-gradient(to right, #e96443 0%, #904e95  51%, #e96443  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/*----------------------------------  
+Header
+------------------------------------*/
+
+h1 {
+	font-size: 3em;
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 2.5em;
+	font-weight: 600;
+}
+
+p {
+	font-size: 1.6em;
+}
+
+h3 {
+	font-weight: 400;
+}
+
+/*----------------------------------  
+Section - Score Panel
+------------------------------------*/
+
+.score-panel {
+	font-size: 1.4em;
+	padding: 1em 0 2em;
+}
+
+.star-rating > li {
+	display: inline-block;
+	padding: 0.5em;
+}
+
+.moves-counter {
+	padding: 0.5em;
+}
+
+.reset-btn {
+	background: #000;
+}
+
+.timer-container {
+	background: #fff;
+	border-radius: 0.5em;
+	color: #000;
+	margin: 0.5em;
+	padding: 0.5em;
+}
+
+.timer {
+	font-size: 1em;
+}
+
+/*----------------------------------  
+Section - Modal
+------------------------------------*/
+
+
+/* Modal (background) */
+.modal {
+	/*Hidden by default */
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	/* Fallback color */
+	background-color: rgb(46, 61, 73);
+	/* With opacity */
+	background-color: rgba(197, 36, 140, 0.6);
+}
+
+/* Modal Content/Box */
+.modal-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	/* 5% from the top and centered */
+	margin: 5% auto;
+	border: 0.8em solid rgb(255, 68, 208);
+	padding-right: 2em;
+	width: 100vw;
+}
+
+/* The Close Button */
+.close {
+	align-self: flex-end;
+	color: #28e;
+	font-size: 5em;
+}
+
+.close:hover,
+.close:focus {
+	color: rgb(223, 230, 233);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Modal Image*/
+.modal-img {
+	display: inline-block;
+	margin: 1em 0 1em;
+	width: 20em;
+}
+
+p.stats {
+	font-weight: 600;
+}
+
+p.stats:last-child {
+	margin-bottom: 1em;
+}
+
+.play-again-btn {
+	background: #28e;
+	margin-bottom: 1em;
+}
+
+/*----------------------------------  
+Deck of Cards
+------------------------------------*/
+/*Mobile first responsivness*/
+.slot {
+	background: linear-gradient(15deg, rgb(233, 13, 218), rgb(21, 207, 241) 95%),rgb(237, 227, 251);
+	border-radius: 0.5em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 20px auto;
+	padding: 0.5em;
+	width: 10em;
+}
+
+
+
+
+.slot,
+.card {
+	box-shadow: 5px 2px 20px 0 rgba(78, 44, 76, 0.5);
+}
+
+.card {
+	background:#544f54;;
+	border-radius: 0.5em;
+	height: 7em;
+	width: 7em;
+  border-radius: 28px;
+  background: #544f54;
+  box-shadow:  7px -7px 14px #322f32,
+               -7px 7px 14px #766f76;
+}
+
+/*
+To disable the color highlight if and img is clicked
+https://stackoverflow.com/questions/21107439/disable-or-change-firefoxs-element-image-highlight-color
+*/
+img {
+	user-select: none;
+	width: 6em;
+}
+
+.slot img {
+	visibility: hidden;
+}
+
+.slot .card.flip {
+	background: #fff;
+	cursor: default;
+	transform: rotateY(180deg);
+	transition: transform 0.3s linear;
+	pointer-events: none;
+}
+
+.flip img {
+	background: #fff;
+	visibility: visible;
+}
+
+.slot.card.match {
+	background: rgb(51, 221, 153);
+	visibility: visible;
+	cursor: default;
+	animation: pulse 1s;
+}
+
+.match img {
+	background: #39d;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	80% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/*---------------------------------- 
+Footer
+------------------------------------*/
+
+.footer {
+	color: #666;
+	margin-bottom: 2em;
+}
+
+.footer > p {
+	font-size: 1em;
+	padding: 1em;
+}
+
+.footer a:link,
+.footer a:visited {
+	color: #28e;
+	text-decoration: none;
+}
+
+/*---------------------------------- 
+Media Queries
+------------------------------------*/
+
+/*--Tablets-------------------------*/
+@media screen and (min-width: 550px) {
+
+	.slot  {
+		height: 50em;
+		padding: 2em;
+		width: 50em;
+	}
+
+	.card {
+		height: 10em;
+		width: 10em;
+	}
+
+	.slotimg {
+		width: 9em;
+	}
+
+	.modal-content h2 {
+		font-size: 4em;
+	}
+
+	.play-again-btn {
+		font-size: 1.8em;
+    
+	}
+}
+
+/*---------------------------------- 
+Desktops
+------------------------------------*/
+@media screen and (min-width: 800px) {
+	
+	h1 {
+		font-size: 6em;
+	}
+
+	p {
+		font-size: 2.3em;
+	}
+
+	.slot  {
+		height: 70em;
+		width: 70em;
+	}
+
+	.card {
+		height: 15em;
+		width: 15em;
+	}
+
+	.slot img {
+		width: 13em;
+	}
+
+	.reset-btn {
+		font-size: 0.8em;
+	}
+
+	.footer {
+		font-size: 1.2em;
+	}
+	
+	.modal-content h2 {
+		font-size: 5em;
+	}
+
+	/* Modal Image*/
+	.modal-img {
+		width: 30em;
+	}
+
+	.play-again-btn {
+		font-size: 2em;
+	}
+}
