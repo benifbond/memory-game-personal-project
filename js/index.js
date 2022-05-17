@@ -63,7 +63,7 @@ function startGame() {
 		
 		liTag.appendChild(addImage);
 		
-		addImage.setAttribute("src", "images/favicon.ico" + shuffledDeck[i] + "?raw=true");
+		addImage.setAttribute("src", "https://github.com/benifbond/memory-game-personal-project/tree/master/images" + shuffledDeck[i] + "?raw=true");
 	
 		addImage.setAttribute("alt", "favicon");
 	
