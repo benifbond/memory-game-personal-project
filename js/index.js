@@ -14,7 +14,7 @@ let matched = [];
 const modal = document.getElementById("modal");
 const reset = document.querySelector(".reset-btn");
 const playAgain = document.querySelector(".try-again");
-
+const startButton = document.querySelector(".start-button")
  
 const movesCount = document.querySelector(".moves-counter");
 let moves = 0;
@@ -90,11 +90,16 @@ function startGame() {
 	
 		slot.appendChild(liTag);
 
-	}
+	};
+	backgroundAudio();
+
 	
 }
+startGame()
 
-startGame();
+
+
+
 
 
 
@@ -191,7 +196,7 @@ function noMatch() {
 	}, 700);
 	nomatchSound();
 	movesCounter();
-	// starRating();
+	
 }
 
 // function AddStats() {
@@ -272,17 +277,17 @@ let greetinFunc =    function greetingMessages() {
 	
 	let greeting = "";
 	if (currentHour > 0 && currentHour < 12) {
-	  greeting = "Good morning";
+	  greeting = "Good morning!";
 	 
 	} else if (currentHour > 12 && currentHour < 18) {
-	  greeting = "Good Afternoon";
+	  greeting = "Good Afternoon!";
 	  
 	} else {
-	  greeting = "Good Evening";
+	  greeting = "Good Evening!";
 	  
 	}return greeting;
-	
 }
+
 let greetingMessge = document.getElementById('greeting').innerHTML = greetinFunc()
  
-let trySomethingOut = document.getElementById('trySomethingOut').innerText= "woo! ready for the challenge? I still don't wanna tell you that........ sorry! I wouldn't tell the public your memory capacity! mine aint that good either. "
+let trySomethingOut = document.getElementById('trySomethingOut').innerText = "Woo! ready for a challenge? I still don't wanna tell you that ....... sorry!!!🤣"

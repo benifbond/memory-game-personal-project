@@ -26,7 +26,8 @@ color: aqua;
 	align-items: center;
 	flex-direction: column;
 	margin: 0.5em auto ;
-visibility: hidden;
+	display: none;
+
 }
 .container{
 	-webkit-box-shadow:0px 0px 27px 17px rgba(242,19,183,0.96);
@@ -74,41 +75,92 @@ ul > li {
 	 
 
 
-
 .btn{
 	-webkit-box-shadow:0px 0px 19px 4px rgba(118,201,204,1);
 -moz-box-shadow: 0px 0px 19px 4px rgba(118,201,204,1);
 box-shadow: 0px 0px 19px 4px rgba(118,201,204,1);
 }
 
-/*----------------------------------  
-Header
-------------------------------------*/
 
 h1 {
-	font-size: 5em;
-	font-weight: 400;
+	font-size:5em;
+	padding: 10px;
 	margin:20px auto;
-	color: white
+	color: white;
+
+    text-shadow: 0px 0px 0 rgb(250,249,245),
+                 0px 1px 0 rgb(245,244,240),
+                 0px 2px 0 rgb(240,239,235),
+                 0px 3px 0 rgb(235,234,230),
+                 0px 4px 0 rgb(230,229,225),
+                 0px 5px 0 rgb(225,224,220),
+                 0px 6px 0 rgb(220,219,215),
+                 0px 7px 0 rgb(215,214,210),
+                 0px 8px 0 rgb(210,209,205),
+                 0px 9px 0 rgb(205,204,200),
+                 0px 10px  0 rgb(200,199,195),
+                 0px 11px 10px rgba(0,0,0,0.6),
+                 0px 11px 1px rgba(0,0,0,0.5),
+                 0px 0px 10px rgba(0,0,0,.2);
 }
 
-h2 {
-	font-size: 2.5em;
-	font-weight: 600;
-}
-
-p {
-	font-size: 1.6em;
+p {color: white;
+	font-size: 2em;
+	padding: 20px
 }
 
 h3 {
-	font-weight: 400;
+	font-size:4em;
+	padding: 10px;
+	color: rgb(86, 197, 176)
 }
 
-/*----------------------------------  
-Section - Score Panel
-------------------------------------*/
+h5 {
+	font-size:3em;
+	margin: 0px 80px;
+	color: white;
+	padding:5px;
+}
 
+         
+.start-button{
+	background-image: linear-gradient(to right, #B24592 0%, #F15F79  51%, #B24592  100%);
+	margin: 10px auto;
+	padding: 15px 45px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: 0.5s;
+	background-size: 200% auto;
+	color: white;            
+	box-shadow: 0 0 20px #eee;
+	border-radius: 10px;
+	display: block;
+  }
+
+  .start-button:hover {
+	background-position: right center; /* change the direction of the change here */
+	color: #fff;
+	text-decoration: none;
+  }
+ 
+.sectionOne{
+	border-radius: 15px;
+background: linear-gradient(225deg, #a513cc, #8b10ac);
+box-shadow:  -4px 4px 15px #85e9d6,
+             4px -4px 15px #70c4c0;
+			 width:70%;
+			 height:95%;
+			 margin:5px auto;
+}
+#welcome-page{
+	border-radius: 10px;
+background: linear-gradient(315deg, #404141, #4c4d4d);
+box-shadow:  -5px -5px 13px #979999,
+             5px 5px 13px #d7f1f1;
+			 height: 85%;
+			 width:80%;
+			 margin: 10px auto;
+}
 .score-panel {
 	font-size: 1em;
 	padding: 0;
@@ -204,9 +256,7 @@ Section - Score Panel
 	width: 2em;
 }
 
-p.stats {
-	font-weight: 600;
-}
+
 
 p.stats:last-child {
 	margin-bottom: 1em;
@@ -309,9 +359,6 @@ img {
 	}
 }
 
-/*---------------------------------- 
-Footer
-------------------------------------*/
 
 .footer {
 	color: #666;
@@ -329,12 +376,8 @@ Footer
 	text-decoration: none;
 }
 
-/*---------------------------------- 
-Media Queries
-------------------------------------*/
 
-/*--Tablets-------------------------*/
-@media screen and (min-width: 218px) {
+@media screen and (min-width: 450px) {
 
 	.slot  {
 		height: 50em;
@@ -370,7 +413,7 @@ Desktops
 @media screen and (min-width: 800px) {
 	
 	h1 {
-		font-size: 6em;
+		font-size: 10em;
 	}
 
 	p {
