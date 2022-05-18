@@ -1,9 +1,17 @@
 
-* {
-	margin: 0;
-	padding: 0;
-}
 
+html {
+	box-sizing: border-box;
+	font-size: 10px
+}
+body {
+	/* Background pattern from Subtle Patterns */
+	font-family: 'Patua One', cursive;
+color: aqua;
+	margin: 0;
+	text-align: center;
+	background-color:#000
+}
 /* border box fix */
 *,
 *::before,
@@ -11,27 +19,19 @@
 	box-sizing: inherit;
 }
 
-html {
-	box-sizing: border-box;
-}
-
-body {
-	/* Background pattern from Subtle Patterns */
-	
-
-	font-family: sans-serif;
-	font-size: 60%;
-	letter-spacing: 1.5px;
-	margin: 0;
-	text-align: center;
-}
 
 .container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	margin-top: 0.5em auto;
+	margin: 0.5em auto ;
+visibility: hidden;
+}
+.container{
+	-webkit-box-shadow:0px 0px 27px 17px rgba(242,19,183,0.96);
+-moz-box-shadow: 0px 0px 27px 17px rgba(242,19,183,0.96);
+box-shadow: 0px 0px 27px 17px rgba(242,19,183,0.96);
 }
 
 ul > li {
@@ -41,17 +41,8 @@ ul > li {
 .card,
 .reset-btn {
 	cursor: pointer;
-
 }
 
-.btn {
-	border-radius: 1em;
-	border: none;
-	color: rgb(71, 67, 67);
-	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-	padding: 0.8em;
-  
-}
 
 .card:hover{
   background-image: linear-gradient(to right, #848383 0%, #aca9ac  51%, #b0a5a2  100%);
@@ -61,34 +52,44 @@ ul > li {
 }
 
         
-.btn {
-  background-image: linear-gradient(to right, #e96443 0%, #904e95  51%, #e96443  100%);
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;            
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
-}
+.try-again {
+		background-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%);
+		margin: 10px;
+		padding: 15px 45px;
+		text-align: center;
+		text-transform: uppercase;
+		transition: 0.5s;
+		background-size: 200% auto;
+		color: white;            
+		box-shadow: 0 0 20px #eee;
+		border-radius: 10px;
+		display: block;
+	  }
 
-.btn:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
-}
+	  .try-again:hover {
+		background-position: right center; /* change the direction of the change here */
+		color: #fff;
+		text-decoration: none;
+	  }
+	 
 
+
+
+.btn{
+	-webkit-box-shadow:0px 0px 19px 4px rgba(118,201,204,1);
+-moz-box-shadow: 0px 0px 19px 4px rgba(118,201,204,1);
+box-shadow: 0px 0px 19px 4px rgba(118,201,204,1);
+}
 
 /*----------------------------------  
 Header
 ------------------------------------*/
 
 h1 {
-	font-size: 3em;
+	font-size: 5em;
 	font-weight: 400;
+	margin:20px auto;
+	color: white
 }
 
 h2 {
@@ -109,8 +110,14 @@ Section - Score Panel
 ------------------------------------*/
 
 .score-panel {
-	font-size: 1.4em;
-	padding: 1em 0 2em;
+	font-size: 1em;
+	padding: 0;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-items: baseline;
+		align-content: space-around;
 }
 
 .star-rating > li {
@@ -123,8 +130,27 @@ Section - Score Panel
 }
 
 .reset-btn {
-	background: #000;
-}
+	         
+		background-image: linear-gradient(to right, #fc00ff 0%, #00dbde  51%, #fc00ff  100%);
+		margin: 10px;
+		padding: 15px 45px;
+		text-align: center;
+		text-transform: uppercase;
+		transition: 0.5s;
+		background-size: 200% auto;
+		color: white;            
+		box-shadow: 0 0 20px #eee;
+		border-radius: 10px;
+		display: block;
+	 }
+
+	  .reset-btn:hover {
+		background-position: right center; /* change the direction of the change here */
+		color: #fff;
+		text-decoration: none;
+	  }
+	 
+
 
 .timer-container {
 	background: #fff;
@@ -138,8 +164,7 @@ Section - Score Panel
 	font-size: 1em;
 }
 
-/*----------------------------------  
-Section - Modal
+
 ------------------------------------*/
 
 
@@ -160,25 +185,10 @@ Section - Modal
 }
 
 /* Modal Content/Box */
-.modal-content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background-color: #fff;
-	/* 5% from the top and centered */
-	margin: 5% auto;
-	border: 0.8em solid rgb(255, 68, 208);
-	padding-right: 2em;
-	width: 100vw;
-}
+
 
 /* The Close Button */
-.close {
-	align-self: flex-end;
-	color: #28e;
-	font-size: 5em;
-}
+
 
 .close:hover,
 .close:focus {
@@ -190,8 +200,8 @@ Section - Modal
 /* Modal Image*/
 .modal-img {
 	display: inline-block;
-	margin: 1em 0 1em;
-	width: 20em;
+	margin: 1em auto;
+	width: 2em;
 }
 
 p.stats {
@@ -220,9 +230,13 @@ Deck of Cards
 	align-items: center;
 	margin: 20px auto;
 	padding: 0.5em;
-	width: 10em;
-}
+	width: 20rem;
 
+
+	-webkit-box-shadow:0px 0px 231px 14px rgba(252,252,252,1);
+-moz-box-shadow: 0px 0px 231px 14px rgba(252,252,252,1);
+box-shadow: 0px 0px 231px 14px rgba(252,252,252,1);
+}
 
 
 
@@ -231,11 +245,13 @@ Deck of Cards
 	box-shadow: 5px 2px 20px 0 rgba(78, 44, 76, 0.5);
 }
 
+
+
 .card {
 	background:#544f54;;
 	border-radius: 0.5em;
-	height: 7em;
-	width: 7em;
+	height: 4em;
+	width: 4em;
   border-radius: 28px;
   background: #544f54;
   box-shadow:  7px -7px 14px #322f32,
@@ -248,11 +264,13 @@ https://stackoverflow.com/questions/21107439/disable-or-change-firefoxs-element-
 */
 img {
 	user-select: none;
-	width: 6em;
+	width: 2em;
+	-ms-ime-mode: active;
 }
 
 .slot img {
 	visibility: hidden;
+	border-radius: 50%;
 }
 
 .slot .card.flip {
@@ -316,7 +334,7 @@ Media Queries
 ------------------------------------*/
 
 /*--Tablets-------------------------*/
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 218px) {
 
 	.slot  {
 		height: 50em;
@@ -330,7 +348,7 @@ Media Queries
 	}
 
 	.slotimg {
-		width: 9em;
+		width: 20em;
 	}
 
 	.modal-content h2 {
@@ -340,6 +358,9 @@ Media Queries
 	.play-again-btn {
 		font-size: 1.8em;
     
+	}
+	.img{
+		width: 4em;
 	}
 }
 
@@ -370,9 +391,7 @@ Desktops
 		width: 13em;
 	}
 
-	.reset-btn {
-		font-size: 0.8em;
-	}
+	
 
 	.footer {
 		font-size: 1.2em;
