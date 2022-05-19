@@ -9,18 +9,18 @@ let matched = [];
 
 
 
-
-
+let gif =document.getElementById("gif");
+let scoreboard = document.querySelector('.scoreBoard');
 const modal = document.getElementById("modal");
 const reset = document.querySelector(".reset-btn");
 const playAgain = document.querySelector(".try-again");
 const startButton = document.querySelector(".start-button")
- 
+const sectionOne = document.querySelector('.sectionOne')
+const container = document.querySelector('.container')
+
 const movesCount = document.querySelector(".moves-counter");
 let moves = 0;
 
-// const star = document.getElementById("star-rating").querySelectorAll(".star");
-// let starCount = 3;
 
 const timeCounter = document.querySelector(".timer");
 
@@ -54,9 +54,9 @@ function nomatchSound(){
 }
 function backgroundAudio(){
 	let backgroundAudio = document.createElement("audio");
-	backgroundAudio.src = "/audio/backgroundmusic.mp3";
+	backgroundAudio.src = "/audio/epic-trailer.mp3";
 	backgroundAudio.play();
-	backgroundAudio.volume = 0.7;
+	backgroundAudio.volume = 0.2;
 	backgroundAudio.loop=true
 }
 ////////////////////////////////////////END OF AUDIO/////////////////////////////////
@@ -73,35 +73,35 @@ function shuffle(array) {
   return array;
 }
 
-function startGame() {
-	const shuffledDeck = shuffle(cardPlate); 
-	for (let i = 0; i < shuffledDeck.length; i++) {
 
+
+ function startGame() {
+	const shuffledDeck = shuffle(cardPlate); 
+	for (let i = 0; i < shuffledDeck.length; i++){
 		const liTag = document.createElement('li');
 		liTag.classList.add('card');
-		
 		const addImage = document.createElement("img");
-		
 		liTag.appendChild(addImage);
-		
 		addImage.setAttribute("src", "../images/" + shuffledDeck[i]);
-	
 		addImage.setAttribute("alt", "images");
-	
 		slot.appendChild(liTag);
-
 	};
 	backgroundAudio();
 
-	
 }
-startGame()
 
 
+window.addEventListener('load',() => {
+	container.style.display = 'none';
+	gif.style.display ="none"
+})
 
 
-
-
+startButton.addEventListener('click',function(){
+	sectionOne.style.display='none';
+	container.style.display = 'block'
+	startGame()
+})
 
 function removeCard() {
 	while (slot.hasChildNodes()) {
@@ -118,7 +118,9 @@ function timer() {
 			}
 		timeCounter.innerHTML = "<i class='fa fa-hourglass-start'></i>" + " Timer: " + minutes + " Mins " + seconds + " Secs" ;
 	}, 1000);
+	
 }
+
 
 
 function stopTime() {
@@ -139,6 +141,7 @@ function resetEverything() {
 	opened = [];
 	removeCard();
 	startGame();
+	
 }
 
 
@@ -146,18 +149,6 @@ function movesCounter() {
 	movesCount.innerHTML ++;
 	moves ++;
 }
-
-
-// function starRating() {
-// 	if (moves === 14) {
-// 		star[2].firstElementChild.classList.remove("fa-star");
-// 		starCount--;
-// 	}
-// 	if (moves === 18) {
-// 		star[1].firstElementChild.classList.remove("fa-star");
-// 		starCount--;
-// 	}
-//}
 
 function compareTwo() {
 	if (opened.length === 2) {
@@ -167,10 +158,8 @@ function compareTwo() {
 		match();
 	} else if (opened.length === 2 && opened[0].src != opened[1].src) {
 		noMatch();
-		
 	}
 }
-
 
 function match() {
 	setTimeout(function() {
@@ -183,7 +172,6 @@ function match() {
 		opened = [];
 	}, 600);
 	movesCounter();
-	//starRating();
 }
 
 
@@ -196,21 +184,7 @@ function noMatch() {
 	}, 700);
 	nomatchSound();
 	movesCounter();
-	
 }
-
-// function AddStats() {
-// 	const stats = document.querySelector(".modal-content");
-// 	for (let i = 1; i <= 3; i++) {
-// 		const statsElement = document.createElement("p");
-// 		statsElement.classList.add("stats");
-// 		stats.appendChild(statsElement);
-// 	}
-// 	let p = stats.querySelectorAll("p.stats");
-// 		p[0].innerHTML = "Time to complete: " + minutes + " Minutes and " + seconds + " Seconds";
-// 		p[1].innerHTML = "Moves Taken: " + moves;
-// 		p[2].innerHTML = "Your Star Rating is: " + starCount + " out of 3";
-//}
 
 
 function displayModal() {
@@ -225,16 +199,22 @@ const modalClose = document.getElementsByClassName("close")[0];
 		}
 	};
 }
+ 
+
+
+
 
 
 function winGame() {
+	
 	if (matched.length === 16) {
 		stopTime();
-		//AddStats();
-		//displayModal();
 		winSound();
-	}
+	
+		}
+		
 }
+
 
 
 slot.addEventListener("click", function(evt) {
@@ -269,25 +249,34 @@ playAgain.addEventListener('click',function() {
 	playSound()
 }) 
 
+
+
+
 /////////////////////////////////// Greeting ///////////////////////////
 
-let greetinFunc =    function greetingMessages() {
+function Heading() {
 	const date = new Date();
 	const currentHour = date.getHours();
 	
-	let greeting = "";
+	
+	var greeting = "";
 	if (currentHour > 0 && currentHour < 12) {
-	  greeting = "Good morning!";
-	 
+	  greeting = "Good morning";
+	  
 	} else if (currentHour > 12 && currentHour < 18) {
-	  greeting = "Good Afternoon!";
+	  greeting = "Good Afternoon";
 	  
 	} else {
-	  greeting = "Good Evening!";
+	  greeting = "Good Evening";
 	  
-	}return greeting;
-}
+	}
+	return greeting
+  }
 
-let greetingMessge = document.getElementById('greeting').innerHTML = greetinFunc()
+let greetingMessge = document.getElementById('greeting').innerHTML = Heading()
  
 let trySomethingOut = document.getElementById('trySomethingOut').innerText = "Woo! ready for a challenge? I still don't wanna tell you that ....... sorry!!!🤣"
+
+
+
+

@@ -26,7 +26,7 @@ color: aqua;
 	align-items: center;
 	flex-direction: column;
 	margin: 0.5em auto ;
-	display: none;
+	
 
 }
 .container{
@@ -55,7 +55,7 @@ ul > li {
         
 .try-again {
 		background-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%);
-		margin: 10px;
+		margin: 10px auto;
 		padding: 15px 45px;
 		text-align: center;
 		text-transform: uppercase;
@@ -163,13 +163,13 @@ box-shadow:  -5px -5px 13px #979999,
 }
 .score-panel {
 	font-size: 1em;
-	padding: 0;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-		align-items: baseline;
-		align-content: space-around;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: baseline;
+	align-content: center;
+		
 }
 
 .star-rating > li {
@@ -184,7 +184,7 @@ box-shadow:  -5px -5px 13px #979999,
 .reset-btn {
 	         
 		background-image: linear-gradient(to right, #fc00ff 0%, #00dbde  51%, #fc00ff  100%);
-		margin: 10px;
+		margin: 10px auto;
 		padding: 15px 45px;
 		text-align: center;
 		text-transform: uppercase;
@@ -280,28 +280,22 @@ Deck of Cards
 	align-items: center;
 	margin: 20px auto;
 	padding: 0.5em;
-	width: 20rem;
-
-
+	width: 50%;
 	-webkit-box-shadow:0px 0px 231px 14px rgba(252,252,252,1);
 -moz-box-shadow: 0px 0px 231px 14px rgba(252,252,252,1);
 box-shadow: 0px 0px 231px 14px rgba(252,252,252,1);
 }
-
-
 
 .slot,
 .card {
 	box-shadow: 5px 2px 20px 0 rgba(78, 44, 76, 0.5);
 }
 
-
-
 .card {
 	background:#544f54;;
 	border-radius: 0.5em;
-	height: 4em;
-	width: 4em;
+	height: 3em;
+	width: 3em;
   border-radius: 28px;
   background: #544f54;
   box-shadow:  7px -7px 14px #322f32,
