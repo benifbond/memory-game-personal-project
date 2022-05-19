@@ -1,5 +1,5 @@
 
-const cardPlate = ["box.png", "box.png", "clock.png", "clock.png", "instagram.png", "instagram.png", "linkedin.png", "linkedin.png", "tinder.png", "tinder.png", "new.png", "new.png", "sprechblase.png", "sprechblase.png", "twitter.png","twitter.png"];
+const cardPlate = ["images/box.png", "images/box.png", "images/clock.png", "images/clock.png", "images/instagram.png", "images/instagram.png", "images/linkedin.png", "images/linkedin.png", "images/tinder.png", "images/tinder.png", "images/new.png", "images/new.png", "images/sprechblase.png", "images/sprechblase.png", "images/twitter.png","images/twitter.png"];
 const slot = document.querySelector(".slot");
 
 
@@ -210,7 +210,6 @@ function winGame() {
 	if (matched.length === 16) {
 		stopTime();
 		winSound();
-	
 		}
 		
 }
