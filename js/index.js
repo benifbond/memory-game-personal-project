@@ -31,32 +31,36 @@ let seconds = 0;
 let timeStart = false;
 
 //////////////////////////////////// audio Section////////////////////////////////////////////////////////
-function playSound(url){
-	new Audio(url).play();
-	}
+
+	
+	
 
 function matchSound (){
 let myAudio = document.createElement("audio");
 	myAudio.src = "audio/achievement.wav";
 	myAudio.play();
+	myAudio.volume =0.01;
 }
 ;
 function winSound(){
 	let winAudio = document.createElement("audio");
 	winAudio.src = "audio/winning-swoosh.wav";
 	winAudio.play();
+	winAudio.volume = 0.01;
 }
+
 
 function nomatchSound(){
 	let wrongMatchAudio = document.createElement("audio");
 	wrongMatchAudio.src = "audio/wrong.wav";
 	wrongMatchAudio.play();
+	wrongMatchAudio.volume = 0.03;
 }
 function backgroundAudio(){
 	let backgroundAudio = document.createElement("audio");
 	backgroundAudio.src = "audio/epic-trailer.mp3";
 	backgroundAudio.play();
-	backgroundAudio.volume = 0.1;
+	backgroundAudio.volume = 0.01;
 	backgroundAudio.loop=true
 }
 ////////////////////////////////////////END OF AUDIO/////////////////////////////////
@@ -93,7 +97,7 @@ function shuffle(array) {
 
 window.addEventListener('load',() => {
 	container.style.display = 'none';
-	gif.style.display ="none"
+	
 })
 
 
@@ -245,7 +249,7 @@ reset.addEventListener('click', resetEverything);
 
 playAgain.addEventListener('click',function() {
 	resetEverything();
-	playSound()
+	
 }) 
 
 
