@@ -82,7 +82,7 @@ function shuffle(array) {
 		liTag.classList.add('card');
 		const addImage = document.createElement("img");
 		liTag.appendChild(addImage);
-		addImage.setAttribute("src", "https://github.com/benifbond/memory-game-personal-project/tree/master/images" + shuffledDeck[i] + "?raw=false");
+		addImage.setAttribute("src", "/images/" + shuffledDeck[i]);
 		addImage.setAttribute("alt", "images");
 		slot.appendChild(liTag);
 	};
