@@ -9,7 +9,7 @@ let matched = [];
 
 
 
-let gif =document.getElementById("gif");
+
 let scoreboard = document.querySelector('.scoreBoard');
 const modal = document.getElementById("modal");
 const reset = document.querySelector(".reset-btn");
@@ -95,9 +95,10 @@ function shuffle(array) {
 }
 
 
+
 window.addEventListener('load',() => {
 	container.style.display = 'none';
-	
+
 })
 
 
@@ -255,28 +256,7 @@ playAgain.addEventListener('click',function() {
 
 
 
-/////////////////////////////////// Greeting ///////////////////////////
-
-function Heading() {
-	const date = new Date();
-	const currentHour = date.getHours();
-	
-	
-	var greeting = "";
-	if (currentHour > 0 && currentHour < 12) {
-	  greeting = "Good morning";
-	  
-	} else if (currentHour > 12 && currentHour < 18) {
-	  greeting = "Good Afternoon";
-	  
-	} else {
-	  greeting = "Good Evening";
-	  
-	}
-	return greeting
-  }
-
-let greetingMessge = document.getElementById('greeting').innerHTML = Heading()
+/////////////////////////////////// Greeting /////////////////////////
  
 let trySomethingOut = document.getElementById('trySomethingOut').innerText = "Woo! ready for a challenge? I still don't wanna tell you that ....... sorry!!!🤣"
 
