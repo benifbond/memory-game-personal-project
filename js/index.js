@@ -33,7 +33,6 @@ let timeStart = false;
 //////////////////////////////////// audio Section////////////////////////////////////////////////////////
 
 	
-	
 
 function matchSound (){
 let myAudio = document.createElement("audio");
@@ -95,9 +94,9 @@ function shuffle(array) {
 }
 
 
-
 window.addEventListener('load',() => {
 	container.style.display = 'none';
+	
 
 })
 
