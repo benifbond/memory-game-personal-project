@@ -37,24 +37,24 @@ function playSound(url){
 
 function matchSound (){
 let myAudio = document.createElement("audio");
-	myAudio.src = "/audio/achievement.wav";
+	myAudio.src = "audio/achievement.wav";
 	myAudio.play();
 }
 ;
 function winSound(){
 	let winAudio = document.createElement("audio");
-	winAudio.src = "/audio/winning-swoosh.wav";
+	winAudio.src = "audio/winning-swoosh.wav";
 	winAudio.play();
 }
 
 function nomatchSound(){
 	let wrongMatchAudio = document.createElement("audio");
-	wrongMatchAudio.src = "/audio/wrong.wav";
+	wrongMatchAudio.src = "audio/wrong.wav";
 	wrongMatchAudio.play();
 }
 function backgroundAudio(){
 	let backgroundAudio = document.createElement("audio");
-	backgroundAudio.src = "/audio/epic-trailer.mp3";
+	backgroundAudio.src = "audio/epic-trailer.mp3";
 	backgroundAudio.play();
 	backgroundAudio.volume = 0.2;
 	backgroundAudio.loop=true
@@ -82,7 +82,7 @@ function shuffle(array) {
 		liTag.classList.add('card');
 		const addImage = document.createElement("img");
 		liTag.appendChild(addImage);
-		addImage.setAttribute("src", "/images/" + shuffledDeck[i]);
+		addImage.setAttribute("src", "images/" + shuffledDeck[i]);
 		addImage.setAttribute("alt", "images");
 		slot.appendChild(liTag);
 	};
