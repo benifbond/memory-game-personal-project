@@ -56,7 +56,7 @@ function backgroundAudio(){
 	let backgroundAudio = document.createElement("audio");
 	backgroundAudio.src = "audio/epic-trailer.mp3";
 	backgroundAudio.play();
-	backgroundAudio.volume = 0.2;
+	backgroundAudio.volume = 0.1;
 	backgroundAudio.loop=true
 }
 ////////////////////////////////////////END OF AUDIO/////////////////////////////////
